@@ -1,3 +1,3 @@
 # lethal-dose
 This is portfolio project 3, for Webtechnology
-Concept is; enter bodyweight, choose foodstuff
+/nl Concept is; enter bodyweight, choose foodstuff
