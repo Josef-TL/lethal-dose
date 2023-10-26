@@ -9,13 +9,20 @@ const food = [
     },
     {
         name: "water",
-        lethal: 3000, /* mL/kg */
+        lethal: 300, /* mL/kg */
     },
     {
         name: "apples",
         lethal: 50, /* mg/kg */
     }
 ]
+const calcBtn = document.querySelector("#calc-btn")
+
+let lethalDoseResult = 0;
+
+/*  =======================
+          Functions
+    ======================= */
 function getSelectedFood() {
     const foodElem = document.querySelector("#food-select")
     return foodElem.options[foodElem.selectedIndex].text
@@ -39,16 +46,19 @@ function calculate () {
     const food = getSelectedFood();
     const lethal = getLethalDose(food);
 
-    console.log(weight);
-    console.log(food);
-    console.log(lethal);
+    lethalDoseResult = lethal*weight;
 }
 
-const calcBtn = document.querySelector("#calc-btn")
-calcBtn.addEventListener("click",()=>calculate())
-
-
-
-function calculateLethalDose(){
+function insertCalculating(){
+    calcBtn.insertAdjacentHTML("afterend","" +
+        "<div class=\"lds-ring\">\n" +
+        "    <div></div>\n" +
+        "    <div></div>\n" +
+        "    <div></div>\n" +
+        "    <div></div>\n" +
+        "</div>")
 
 }
+
+
+calcBtn.addEventListener("click",()=>{calculate();insertCalculating()})
