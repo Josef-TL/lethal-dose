@@ -1,40 +1,86 @@
-h1 {
-    color: red;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-
-.lds-ring {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
+body {
+    display: grid;
+    place-content: center;
+    background-color: darkolivegreen;
 }
-.lds-ring div {
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border: 8px solid #ff0;
+
+button  {
+    width: 140px;
+    height: 50px;
+    color: darkgreen;
+    background: #29ca8e;
+    border: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: indianred;
+    cursor: pointer;
+}
+
+#btn-loader {
+    pointer-events: none;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #ff0 transparent transparent transparent;
+    border: 3px solid transparent;
+    border-top-color: #fff;
+    animation: an1 1s ease infinite;
 }
-.lds-ring div:nth-child(1) {
-    animation-delay: -0.45s;
-}
-.lds-ring div:nth-child(2) {
-    animation-delay: -0.3s;
-}
-.lds-ring div:nth-child(3) {
-    animation-delay: -0.15s;
-}
-@keyframes lds-ring {
+
+@keyframes an1 {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(0turn);
     }
-    100% {
-        transform: rotate(360deg);
+    100%{
+        transform: rotate(1turn);
     }
+}
+
+.wrapper {
+    display: flex;
+    padding-top:  50px;
+    justify-content: center;
+}
+
+.collapsible {
+    max-width: 450px;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.collapsible-text {
+    max-height: 45px;
+    background: white;
+}
+
+.collapsible-text label {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 15px 15px 0;
+    color: #1c1c6b;
+}
+
+.collapsible-text p {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#expand-btn {
+    appearance: none;
+}
+
+.collapsible input:checked +.collapsible-text{
+    max-height: 400px;
 }

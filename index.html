@@ -3,7 +3,6 @@
 <head>
     <title>Lethal dose</title>
     <meta charset="UTF-8">
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,9 +14,9 @@
     <select name="food" id="food-select">
         <option value="coffee">Coffee</option>
         <option value="cola">Cola</option>
-        <option value="bananna">Bananna</option>
+        <option value="banana">Banana</option>
         <option value="water">Water</option>
-        <option value="aples">Apples</option>
+        <option value="apples">Apples</option>
     </select>
     </div>
 
@@ -27,10 +26,28 @@
     </div>
 </form>
 <div>
-    <button id="calc-btn"> Calculate</button>
+    <button id="calc-btn">
+        <!--<span id="btn-loader"></span>-->
+        Calculate
+    </button>
 </div>
 
+<div class="wrapper">
+    <div class="collapsible">
+        <input id="expand-btn" type="checkbox">
 
-    <script src="main.js"></script>
+        <div class="collapsible-text">
+            <label for="expand-btn">Collapsible heading</label>
+            <p>
+                Contrary to popular belief, Lorem Ipsum is not simply random text.
+                It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<script src="main.js"></script>
 </body>
 </html>

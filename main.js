@@ -49,16 +49,13 @@ function calculate () {
     lethalDoseResult = lethal*weight;
 }
 
-function insertCalculating(){
-    calcBtn.insertAdjacentHTML("afterend","" +
-        "<div class=\"lds-ring\">\n" +
-        "    <div></div>\n" +
-        "    <div></div>\n" +
-        "    <div></div>\n" +
-        "    <div></div>\n" +
-        "</div>")
-
+function calcCssTransform(){
+    calcBtn.innerHTML = "<span id=\"btn-loader\"></span>"
+    setTimeout(()=>{
+        calcBtn.innerHTML = "Result"
+    }, 2000);
 }
 
 
-calcBtn.addEventListener("click",()=>{calculate();insertCalculating()})
+
+calcBtn.onclick = ()=>{calculate(); calcCssTransform()};
