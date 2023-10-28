@@ -84,19 +84,40 @@ body .bottom-wrapper {
     justify-content: center;
 }
 
-button  {
-    width: 140px;
-    height: 50px;
-    color: darkgreen;
-    background: #29ca8e;
-    border: 0;
-    border-radius: 5px;
-    font-size: 20px;
-    display: flex;
+
+#calc-btn {
     align-items: center;
+    appearance: none;
+    border-radius: 4px;
+    border-style: none;
+    box-shadow:
+            0 1px 1px var(--shadow-color),
+            0 2px 2px var(--shadow-color),
+            0 3px 3px var(--shadow-color);
+    box-sizing: border-box;
+    color: var(--color-4);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: Roboto,sans-serif;
+    font-size: .875rem;
+    font-weight: bold;
+    height: 42px;
     justify-content: center;
-    text-transform: uppercase;
+    letter-spacing: .0892857em;
+    line-height: normal;
+    min-width: 140px;
+    outline: none;
+    overflow: visible;
+    padding: 0 16px;
+    position: relative;
+    text-align: center;
+    background-color: var(--color-3);
 }
+
+#calc-btn:hover {
+    background-color: var(--color-3-highlight);
+}
+
 
 .btn {
     padding-top: 40px;
@@ -121,85 +142,60 @@ button  {
     }
 }
 
+
 .collapsible {
     width: 280px;
-    overflow: hidden;
-    font-weight: 500;
-    margin: 8px;
-
-}
-
-.collapsible-text {
-    max-height: 22px;
     background: var(--color-4);
     border-radius: 2px;
-    transition: all 0.3s ease;
+    font-weight: 500;
+    margin: 8px;
     padding-top: 6px;
+    height: 100%;
+    box-shadow:
+            0 1px 1px var(--shadow-color),
+            0 2px 2px var(--shadow-color),
+            0 3px 3px var(--shadow-color);
+
 }
 
-.collapsible-text label {
-    font-size: 18px;
+.collapsible label {
+    display:flex;
+    align-items: center;
+    font-size: 15px;
     font-weight: bold;
-    margin-bottom: 10px;
-    padding: 15px 15px 0;
+    padding: 10px;
     cursor: pointer;
 }
-.collapsible-text label::after {
-    content: "";
+
+.collapsible label::before {
+    content: "+";
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 600;
 }
 
-.collapsible-text p {
-    padding-left: 15px;
-    padding-right: 15px;
-    visibility: hidden;
+.collapsible .collapsible-text {
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, padding 0.3s;
 }
 
-#expand-btn {
-    appearance: none;
-}
-#how-expand-btn {
-    appearance: none;
+
+input[type="checkbox"] {
+    display: none;
 }
 
-.collapsible input:checked ~.collapsible-text{
+.collapsible input[type="checkbox"]:checked + label + .collapsible-text{
     max-height: 400px;
+    padding: 10px 10px 20px;
     transition: all 0.3s ease;
 }
-
-.collapsible input:checked ~.collapsible-text p{
-    visibility: visible;
+.collapsible input[type="checkbox"]:checked + label::before {
+    content: "-";
 }
 
 
-#calc-btn {
-   align-items: center;
-   appearance: none;
-   border-radius: 4px;
-   border-style: none;
-    box-shadow:
-        0 1px 1px var(--shadow-color),
-        0 2px 2px var(--shadow-color),
-        0 3px 3px var(--shadow-color);
-   box-sizing: border-box;
-   color: var(--color-4);
-   cursor: pointer;
-   display: inline-flex;
-   font-family: Roboto,sans-serif;
-   font-size: .875rem;
-   font-weight: bold;
-   height: 42px;
-   justify-content: center;
-   letter-spacing: .0892857em;
-   line-height: normal;
-   min-width: 64px;
-   outline: none;
-   overflow: visible;
-   padding: 0 16px;
-   position: relative;
-   text-align: center;
-   background-color: var(--color-3);
-}
 
-#calc-btn:hover {
-    background-color: var(--color-3-highlight);
-}
+
