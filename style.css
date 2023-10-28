@@ -1,13 +1,62 @@
+:root  {
+    --color-1: #2b2b2b;
+    --color-2: #3c3c3c;
+    --color-3: #7BD742;
+    --color-3-highlight: #69B839;
+    --color-4: #644f7a;
+    --color-5: #3a2254;
+
+}
+
 * {
     margin: 0;
     padding: 0;
+    font-family: Roboto,sans-serif;
+    font-size: 18px;
 }
 
 body {
     display: grid;
     place-content: center;
-    background-color: darkolivegreen;
+    background-color: var(--color-1);
+    color: var(--color-3);
 }
+
+main {
+    background-color: var(--color-5);
+    width: 500px;
+}
+
+#title {
+    text-align: center;
+    font-size: 50px;
+}
+
+body .top-wrapper {
+    display: flex;
+    padding-top:  14px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.form-w {
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+#food-select {
+    width: 100px;
+    font-size: 18px;
+}
+
+body .bottom-wrapper {
+    display: flex;
+    padding-top:  14px;
+    justify-content: center;
+    align-items: center;
+}
+
 
 button  {
     width: 140px;
@@ -23,9 +72,8 @@ button  {
     text-transform: uppercase;
 }
 
-button:hover {
-    background: indianred;
-    cursor: pointer;
+.btn {
+    padding-top: 40px;
 }
 
 #btn-loader {
@@ -47,29 +95,29 @@ button:hover {
     }
 }
 
-.wrapper {
-    display: flex;
-    padding-top:  50px;
-    justify-content: center;
-}
+
 
 .collapsible {
-    max-width: 450px;
+    width: 280px;
     overflow: hidden;
     font-weight: 500;
+    margin: 8px;
 }
 
 .collapsible-text {
-    max-height: 45px;
-    background: white;
+    max-height: 22px;
+    background: var(--color-4);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    padding-top: 6px;
 }
 
 .collapsible-text label {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
     padding: 15px 15px 0;
-    color: #1c1c6b;
+    cursor: pointer;
 }
 
 .collapsible-text p {
@@ -80,7 +128,41 @@ button:hover {
 #expand-btn {
     appearance: none;
 }
+#how-expand-btn {
+    appearance: none;
+}
 
 .collapsible input:checked +.collapsible-text{
     max-height: 400px;
+    transition: all 0.3s ease;
+}
+
+#calc-btn {
+   align-items: center;
+   appearance: none;
+   border-radius: 4px;
+   border-style: none;
+   box-shadow: rgba(0, 0, 0, .2) 0 3px 1px -2px,rgba(0, 0, 0, .14) 0 2px 2px 0,rgba(0, 0, 0, .12) 0 1px 5px 0;
+   box-sizing: border-box;
+   color: var(--color-4);
+   cursor: pointer;
+   display: inline-flex;
+   font-family: Roboto,sans-serif;
+   font-size: .875rem;
+   font-weight: bold;
+   height: 42px;
+   justify-content: center;
+   letter-spacing: .0892857em;
+   line-height: normal;
+   min-width: 64px;
+   outline: none;
+   overflow: visible;
+   padding: 0 16px;
+   position: relative;
+   text-align: center;
+    background-color: var(--color-3);
+}
+
+#calc-btn:hover {
+    background-color: var(--color-3-highlight);
 }

@@ -38,6 +38,7 @@ function getLethalDose(foodText) {
 
 function getWeight(){
     const weightElem = document.querySelector("#weight")
+    if (typeof weightElem.value === "string") return weightElem.placeholder;
     return weightElem.value
 }
 
