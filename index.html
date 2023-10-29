@@ -3,6 +3,7 @@
 <head>
     <title>Lethal dose</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +12,7 @@
 
     <h1 id="title">Lethal dose!</h1>
 
-<form onsubmit="return doSomething()">
+<form>
     <div class="form-w">
     <label for="food-select">What are you eating? </label>
     <select name="food" id="food-select">
@@ -19,7 +20,7 @@
         <option value="cola">Cola</option>
         <option value="banana">Banana</option>
         <option value="water">Water</option>
-        <option value="apples">Apples</option>
+        <option value="apple">Apples</option>
     </select>
     </div>
 
@@ -36,36 +37,46 @@
 </div>
 </div>
 
+  <div class="middle-wrapper">
+      <div>
+          To die of <span class="food-choice"></span> overdose, you would need to consume <span id="food-lethal"></span> of <span class="food-choice"></span>.
+          <br>
+          This would be the same as <span id="food-container"></span>.
+      </div>
+  </div>
+
+
 <div class="bottom-wrapper">
     <div class="collapsible">
         <input id="how-expand-btn" type="checkbox">
         <label for="how-expand-btn">How is this calculated?</label>
         <div class="collapsible-text">
         <p>
-                Contrary to popular belief, Lorem Ipsum is not simply random text.
-                It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of
-            </p>
+            Everything that can be ingested has a "lethal dose", which is the amount to consume,
+            where it would kill you. I base my calculations on the LD50 index.
+            "The lethal dose for 50% of the population"
+
+        </p>
         </div>
     </div>
 
     <div class="collapsible">
         <input id="expand-btn" type="checkbox">
-            <label for="expand-btn">Deez</label>
+            <label for="expand-btn">What is killing you?</label>
         <div class="collapsible-text">
-            <p> nutz </p>
+            <p>
+                What exactly would be killing you in these scenarios?
+                It differs from substance to substance. In most cases,
+                it is a chemical in the food stuff, fx. caffeine in coffee and cola.
+
+                However, in the case of bananas, you will die of radiation poisoning before
+                potassium gets to you.
+            </p>
         </div>
     </div>
 </div>
 
 </main>
-<div class="whitespace">
-
-</div>
-
-<footer>
-    <div>hey</div>
-</footer>
 <script src="main.js"></script>
 </body>
 </html>
