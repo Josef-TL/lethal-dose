@@ -26,7 +26,7 @@ const food = [
     },
     {
         name: "apple",
-        lethal: 50, /* mg/kg */
+        lethal: 200, /* mg/kg */
         measure: "g",
         ratio: 1/100000,
         container: "apples"
